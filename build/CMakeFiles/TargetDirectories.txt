@@ -1,0 +1,3 @@
+/home/h0nzra/Documents/All_Project/BOSS/CPP/Gestion_Biblio/build/CMakeFiles/Biblio.dir
+/home/h0nzra/Documents/All_Project/BOSS/CPP/Gestion_Biblio/build/CMakeFiles/edit_cache.dir
+/home/h0nzra/Documents/All_Project/BOSS/CPP/Gestion_Biblio/build/CMakeFiles/rebuild_cache.dir
