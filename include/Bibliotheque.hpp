@@ -10,5 +10,5 @@ class Bibliotheque{
         void suppressionLivreIsbn(int& isbn);
         void rechercheLivreTitre(string& titre);
         void affichageSpecifique(int& isbn);
-        void afficherLivresAll(vector<Livre> allLivre);
+        void afficherLivresAll();
 };

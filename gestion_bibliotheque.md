@@ -33,5 +33,5 @@ Tu dois développer une petite application pour gérer une bibliothèque. La bib
 
 ## Explication de l'exercice
 
-- **Livre** : La classe représente un livre avec des attributs comme le titre, l'auteur, l'ISBN et l'année de publication. Elle a une méthode `afficher` qui permet d'afficher ses informations.
+- **Livre** : La classe représente un livre avec des attributs comme le titre, l'auteur, l'ISBN et l'année de publication. Elle a une méthode `affichage` qui permet d'afficher ses informations.
 - **Bibliothèque** : La classe gère une collection de livres avec des méthodes pour ajouter des livres, rechercher par titre, supprimer par ISBN et afficher la liste des livres.

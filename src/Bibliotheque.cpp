@@ -3,7 +3,7 @@
 #include "Bibliotheque.hpp"
 using namespace std;
 
-void Bibliotheque::afficherLivresAll(vector<Livre> allLivre){
+void Bibliotheque::afficherLivresAll(){
     cout << "Voici tous les livres!\n";
 
     for (auto &&i : allLivre)
@@ -55,7 +55,7 @@ void Bibliotheque::ajouterLivre(vector<Livre>& livre){
 
 void Bibliotheque::suppressionLivreIsbn(int& isbn){
     cout << "Suppression d'un livre!\n";
-    afficherLivresAll(allLivre);
+    afficherLivresAll();
 
     auto it = find_if(allLivre.begin(), allLivre.end(), [&isbn](const Livre& livre) {
         return livre.getIsbn() == isbn;
@@ -69,7 +69,7 @@ void Bibliotheque::suppressionLivreIsbn(int& isbn){
     
 }
 
-void :: Bibliotheque::rechercheLivreTitre(string& titre){
+void Bibliotheque::rechercheLivreTitre(string& titre){
     cout << "Recherche " << titre << " en cours ... \n";
 
     auto it = find_if(allLivre.begin(), allLivre.end(), [&titre](const Livre& livre) {
