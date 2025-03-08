@@ -57,9 +57,6 @@ void Bibliotheque::suppressionLivreIsbn(int& isbn){
     cout << "Suppression d'un livre!\n";
     afficherLivresAll(allLivre);
 
-    cout << "Entrez l'isbn du livre à supprimer: ";
-    int isbn; cin >> isbn;
-
     auto it = find_if(allLivre.begin(), allLivre.end(), [&isbn](const Livre& livre) {
         return livre.getIsbn() == isbn;
     });
