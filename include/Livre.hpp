@@ -11,6 +11,10 @@ class Livre{
         // Constructeur
         Livre(const string& t, const string& a, const int& i, const string& aP);
 
+        void affichage() const {
+            cout << isbn << ". Titre: " << titre << ", Auteur: " << auteur << ", Année de publication: " << annePublication << endl;
+        }
+
         // Getters
         string getTitre() const;
         string getAuteur() const;
