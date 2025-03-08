@@ -1,22 +1,26 @@
-#include <iostream>
 #include <algorithm>
 #include "Bibliotheque.hpp"
 using namespace std;
 
 void Bibliotheque::afficherLivresAll(){
-    cout << "Voici tous les livres!\n";
-
-    for (auto &&i : allLivre)
-    {
-        auto titre = i.getTitre();
-        auto auteur = i.getAuteur();
-        auto isbn = i.getIsbn();
-        auto annnePub = i.getAnnePub();
-
-        cout << isbn << ". Titre: " << titre << ", Auteur: "  << auteur << ", Année de publication: " << annnePub << endl;
-        cout << endl;
-    }
     
+    if (!allLivre.empty()){
+        cout << "Voici tous les livres!\n";
+        for (auto &&i : allLivre)
+        {
+            auto titre = i.getTitre();
+            auto auteur = i.getAuteur();
+            auto isbn = i.getIsbn();
+            auto annnePub = i.getAnnePub();
+
+            cout << isbn << ". Titre: " << titre << ", Auteur: "  << auteur << ", Année de publication: " << annnePub << endl;
+            cout << endl;
+        }
+    }else
+    {
+        cout << "Collection de livre vide!" << endl;
+    }
+    cout << endl;    
 
 }
 
@@ -28,28 +32,30 @@ void Bibliotheque::affichageSpecifique(int& isbn){
     if (it != allLivre.end()) {
         it->affichage();  // Affiche les détails du livre
     } else {
-        cout << "Aucun livre trouvé avec l'ISBN " << isbn << ".\n";
+        cout << "Aucun livre trouvé avec l'ISBN " << isbn << endl;
     }
+    cout << endl;
 }
 
-void Bibliotheque::ajouterLivre(vector<Livre>& livre){
+void Bibliotheque::ajouterLivre(){
     // Ajout Livre par variable
     string titre, auteur, annePub;
     int isbn = 1;
-
-    // livre()
+    cin.clear(); cin.ignore();
 
     cout << "Ajout d'un livre!\n";
     cout << "Titre: "; getline(cin, titre);
     cout << "Auteur: "; getline(cin, auteur);
     cout << "Année de publication(JJ/MM/AA): "; cin >> annePub;
 
-    if(!livre.empty()){
-        isbn = livre.back().getIsbn() + 1;
+    if(!allLivre.empty()){
+        isbn = allLivre.back().getIsbn() + 1;
     }
 
     Livre livre_ajouter(titre, auteur, isbn,annePub); 
-    livre.push_back(livre_ajouter);  
+    allLivre.push_back(livre_ajouter); 
+    
+    cout << "Livre " << titre << " ajouter avec succès!\n" << endl;    
 
 };
 
@@ -64,7 +70,7 @@ void Bibliotheque::suppressionLivreIsbn(int& isbn){
     if(it != allLivre.end()){
         it->affichage();
         allLivre.erase(it);
-        cout << "Suppression terminée!\n";
+        cout << "Suppression terminée!\n" << endl;
     }
     
 }
@@ -80,4 +86,5 @@ void Bibliotheque::rechercheLivreTitre(string& titre){
         cout << "Livre trouvé" << endl;
         it->affichage();
     }
+    cout << endl;
 }

@@ -2,7 +2,7 @@
 using namespace std;
 
 Livre::Livre(const string& t, const string& a, const int& i, const string& aP):
-            titre(t), auteur(a), isbn(i), annePublication(a){}
+            titre(t), auteur(a), isbn(i), annePublication(aP){}
 
 // Getters
 string Livre::getTitre() const {return titre;}

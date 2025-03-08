@@ -6,7 +6,7 @@ using namespace std;
 class Bibliotheque{
     public:
         vector<Livre> allLivre;
-        void ajouterLivre(vector<Livre>& livre);
+        void ajouterLivre();
         void suppressionLivreIsbn(int& isbn);
         void rechercheLivreTitre(string& titre);
         void affichageSpecifique(int& isbn);
